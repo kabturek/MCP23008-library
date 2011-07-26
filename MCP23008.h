@@ -10,6 +10,8 @@ public:
 
   void pinMode(uint8_t p, uint8_t d);
   void digitalWrite(uint8_t p, uint8_t d);
+  void send(int d);
+  void pins(int d);
   void pullUp(uint8_t p, uint8_t d);
   uint8_t digitalRead(uint8_t p);
 

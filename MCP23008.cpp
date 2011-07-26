@@ -99,6 +99,22 @@ void MCP23008::digitalWrite(uint8_t p, uint8_t d) {
   Wire.endTransmission();
 }
 
+void MCP23008::send(int p) {
+
+  // write the new GPIO
+  Wire.beginTransmission(MCP23008_ADDRESS | i2caddr);
+  Wire.send(MCP23008_GPIO);
+  Wire.send(p);	
+  Wire.endTransmission();
+}
+void MCP23008::pins(int p) {
+
+  // write the new PINS
+  Wire.beginTransmission(MCP23008_ADDRESS | i2caddr);
+  Wire.send(MCP23008_IODIR);
+  Wire.send(p);	
+  Wire.endTransmission();
+}
 void MCP23008::pullUp(uint8_t p, uint8_t d) {
   uint8_t gppu;
   
