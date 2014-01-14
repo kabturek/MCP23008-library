@@ -25,6 +25,8 @@ public:
   uint8_t digitalRead(uint8_t p);
   uint8_t readGPIO(void);
   void writeGPIO(uint8_t);
+  void pins(uint8_t pin_modes);
+  void send(uint8_t pin_states);
 
  private:
   uint8_t i2caddr;

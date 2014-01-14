@@ -63,6 +63,15 @@ void Adafruit_MCP23008::begin(uint8_t addr) {
 
 }
 
+void Adafruit_MCP23008::send(uint8_t pin_states) {
+  // write the new GPIO
+  write8(MCP23008_GPIO, pin_states);
+}
+
+void Adafruit_MCP23008::pins(uint8_t pin_modes) {
+  write8(MCP23008_IODIR, pin_modes);
+}
+
 void Adafruit_MCP23008::begin(void) {
   begin(0);
 }
